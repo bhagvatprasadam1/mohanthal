@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #C96A24;
+    --deep-brown: #3A2116;
+    --cream: #FFF8ED;
+    --light-beige: #F7EBD8;
+    --muted-green: #536B3E;
+    --gold: #C89B3C;
+    --dark-text: #2B211B;
+    --muted-text: #756A60;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #FFF8ED;
+    color: #2B211B;
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif, .font-tenor {
+    font-family: 'Tenor Sans', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+
+  .font-nunito {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-jost {
+    font-family: 'Jost', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom subtle heritage accents */
+.bg-cream-radial {
+  background-color: #FFF8ED;
+}
+
+.gold-border-glow {
+  border: 1px solid #C89B3C;
+}
+
+.gujarati-pattern-bg {
+  background-color: #FFF8ED;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5D5BD;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C96A24;
+}
