@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { seoData } from '../data/seo';
-import { getBreadcrumbSchema } from '../lib/seo';
+import { getBreadcrumbSchema, getProductSchema } from '../lib/seo';
 import { processSteps } from '../data/process';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { Button } from '../components/common/Button';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 export const Process: React.FC = () => {
   const schemas = [
+    getProductSchema(),
     getBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Our Process', path: '/process' },
@@ -38,9 +39,7 @@ export const Process: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <span className="font-jost text-primary font-bold text-xs uppercase tracking-[0.22em] mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
             TIME-HONOURED TECHNIQUE
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-deep-brown font-normal tracking-tight leading-tight">
             The Traditional Mohanthal Making Process
@@ -55,7 +54,6 @@ export const Process: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
             <div className="lg:col-span-7 space-y-4 sm:space-y-5">
               <span className="font-jost text-gold-dark font-bold text-xs uppercase tracking-[0.22em] flex items-center gap-2">
-                <span className="inline-block w-3 h-0.5 bg-gold/70"></span>
                 THE SECRET OF THE CRUMB
               </span>
               <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-deep-brown font-normal leading-tight">
@@ -70,14 +68,19 @@ export const Process: React.FC = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden border-2 border-gold/50">
-                <img
-                  src="/images/process-craft.jpg"
-                  alt="Traditional Mohanthal preparation in heavy brass kadai with slow roasting premium ghee and besan"
-                  className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width="600"
-                  height="450"
-                />
+                <picture>
+                  <source srcSet="/images/process-craft.avif" type="image/avif" />
+                  <source srcSet="/images/process-craft.webp" type="image/webp" />
+                  <img
+                    src="/images/process-craft.jpg"
+                    alt="Traditional Mohanthal preparation in heavy brass kadai with slow roasting premium ghee and besan"
+                    className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="450"
+                  />
+                </picture>
               </div>
             </div>
           </div>

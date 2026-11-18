@@ -39,9 +39,7 @@ export const Contact: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <span className="font-jost text-primary font-bold text-xs uppercase tracking-[0.22em] mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
             REACH OUT TO US
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-deep-brown font-normal tracking-tight leading-tight">
             Let's Make Your Celebration Sweeter
@@ -57,7 +55,7 @@ export const Contact: React.FC = () => {
           {/* Left Column: Direct Contact Info Cards */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-light-beige space-y-5 sm:space-y-6">
-              <h2 className="font-serif font-normal text-xl sm:text-2xl text-deep-brown border-b border-light-beige pb-3">
+              <h2 className="font-serif font-normal text-xl sm:text-2xl text-deep-brown pb-1">
                 Direct Communication
               </h2>
 

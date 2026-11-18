@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { seoData } from '../data/seo';
-import { getBreadcrumbSchema } from '../lib/seo';
+import { getBreadcrumbSchema, getProductSchema } from '../lib/seo';
 import { ingredientsData } from '../data/ingredients';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { Button } from '../components/common/Button';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 export const Ingredients: React.FC = () => {
   const schemas = [
+    getProductSchema(),
     getBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Ingredients', path: '/ingredients' },
@@ -77,11 +78,19 @@ export const Ingredients: React.FC = () => {
               </div>
             </div>
             <div className="lg:col-span-7">
-              <img
-                src="/images/ingredients-mohanthal.jpg"
-                alt="Flat lay showing pure premium ghee, coarse besan, saffron, cardamom, almonds, and pistachios"
-                className="w-full h-auto object-cover max-h-[460px]"
-              />
+              <picture>
+                <source srcSet="/images/ingredients-mohanthal.avif" type="image/avif" />
+                <source srcSet="/images/ingredients-mohanthal.webp" type="image/webp" />
+                <img
+                  src="/images/ingredients-mohanthal.jpg"
+                  alt="Flat lay showing pure premium ghee, coarse besan, saffron, cardamom, almonds, and pistachios"
+                  className="w-full h-auto object-cover max-h-[460px]"
+                  loading="lazy"
+                  decoding="async"
+                  width="700"
+                  height="460"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -117,7 +126,7 @@ export const Ingredients: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-light-beige text-xs text-muted-green font-medium flex items-start gap-2">
+                <div className="pt-3 text-xs text-muted-green font-medium flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <span><strong>Sourcing:</strong> {item.sourcing}</span>
                 </div>

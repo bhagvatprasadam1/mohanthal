@@ -72,7 +72,7 @@ export const FAQ: React.FC = () => {
         </button>
 
         {isOpen && (
-          <div className="px-5 sm:px-6 pb-5 pt-1 text-muted-text text-sm sm:text-[15px] leading-relaxed border-t border-light-beige/50">
+          <div className="px-5 sm:px-6 pb-5 pt-1 text-muted-text text-sm sm:text-[15px] leading-relaxed">
             <p>{faq.answer}</p>
             <span className="inline-block mt-3 text-[11px] font-semibold text-primary/80 uppercase tracking-wider">
               Category: {faq.category}
@@ -112,9 +112,7 @@ export const FAQ: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <span className="font-jost text-primary font-bold text-xs uppercase tracking-[0.22em] mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
             HELP & KNOWLEDGE BASE
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-deep-brown font-normal tracking-tight leading-tight">
             Frequently Asked Questions

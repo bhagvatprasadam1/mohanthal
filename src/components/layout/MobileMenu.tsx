@@ -45,13 +45,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             aria-label="Mobile Navigation Menu"
           >
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-light-beige">
-                <Link to="/" onClick={onClose} className="inline-block py-1">
+              <div className="flex items-center justify-between pb-4">
+                <Link to="/" onClick={onClose} className="inline-block py-1" aria-label={`${siteConfig.brandName} Traditional Sweets`}>
                   <img
                     src="/images/logo.webp"
                     alt={`${siteConfig.brandName} Traditional Sweets`}
-                    width="988"
-                    height="488"
+                    width="220"
+                    height="68"
                     className="h-11 sm:h-12 w-auto object-contain"
                   />
                 </Link>
@@ -87,7 +87,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-6 border-t border-light-beige space-y-4">
+            <div className="pt-4 space-y-4">
               <WhatsAppButton
                 context="general"
                 className="w-full justify-center text-sm py-3"

@@ -28,6 +28,7 @@ export const TrustIndicators: React.FC = () => {
   return (
     <section className="py-6 sm:py-8 lg:py-9 bg-cream" aria-label="Trust and Quality Pillars">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="sr-only">Our Quality & Heritage Pillars</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {pillars.map((pillar, idx) => (
             <div

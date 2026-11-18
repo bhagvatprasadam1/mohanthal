@@ -16,7 +16,6 @@ export const HeroSection: React.FC = () => {
           >
             {/* Elegant Text Kicker */}
             <div className="flex items-center justify-center lg:justify-start gap-2 font-jost text-xs sm:text-sm font-bold tracking-[0.22em] text-gold-dark uppercase">
-              <span className="w-6 h-px bg-gold/60" />
               <span>Heritage Recipe • Pure Tradition</span>
             </div>
 
@@ -81,6 +80,18 @@ export const HeroSection: React.FC = () => {
                 Pan India Express Delivery
               </span>
             </div>
+
+            {/* Promotional Offers Badges (Free Shipping & First Order) */}
+            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream border border-gold/40 text-[11px] sm:text-xs font-semibold text-deep-brown shadow-2xs">
+                <span className="text-muted-green font-bold text-xs">✓</span>
+                <span>Free Shipping above ₹999</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cream border border-gold/40 text-[11px] sm:text-xs font-semibold text-deep-brown shadow-2xs">
+                <span className="text-muted-green font-bold text-xs">✓</span>
+                <span>First Order: Free Shipping above ₹599</span>
+              </span>
+            </div>
           </motion.div>
 
           {/* Right Column: Magnified, Full-Scale Showcase Image */}
@@ -91,15 +102,19 @@ export const HeroSection: React.FC = () => {
             className="lg:col-span-6 flex items-center justify-center relative"
           >
             <div className="w-full flex items-center justify-center relative group">
-              <img
-                src="/images/hero-traditional-box.webp"
-                alt="Traditional Gujarati Mohanthal sweet served on an antique brass thali with the signature gift box, garnished with pistachios and almonds"
-                className="w-full h-auto max-w-[300px] sm:max-w-md lg:max-w-lg xl:max-w-[590px] object-contain transition-transform duration-700 group-hover:scale-[1.02] select-none relative z-10"
-                loading="eager"
-                fetchPriority="high"
-                width="1024"
-                height="910"
-              />
+              <picture>
+                <source srcSet="/images/hero-traditional-box.avif" type="image/avif" />
+                <source srcSet="/images/hero-traditional-box.webp" type="image/webp" />
+                <img
+                  src="/images/hero-traditional-box.webp"
+                  alt="Traditional Gujarati Mohanthal sweet served on an antique brass thali with the signature gift box, garnished with pistachios and almonds"
+                  className="w-full h-auto max-w-[300px] sm:max-w-md lg:max-w-lg xl:max-w-[590px] object-contain transition-transform duration-700 group-hover:scale-[1.02] select-none relative z-10"
+                  loading="eager"
+                  fetchPriority="high"
+                  width="1024"
+                  height="910"
+                />
+              </picture>
             </div>
           </motion.div>
         </div>

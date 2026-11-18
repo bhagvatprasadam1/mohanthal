@@ -8,10 +8,10 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#C96A24',
-          hover: '#B55A1A',
-          dark: '#93440F',
-          light: '#E28643',
+          DEFAULT: '#B04F0E',
+          hover: '#98430B',
+          dark: '#803607',
+          light: '#C96A24',
         },
         'deep-brown': {
           DEFAULT: '#3A2116',
@@ -27,17 +27,17 @@ export default {
           hover: '#EFE0C7',
         },
         'muted-green': {
-          DEFAULT: '#536B3E',
-          dark: '#3E512E',
-          light: '#6E8B54',
+          DEFAULT: '#435832',
+          dark: '#354627',
+          light: '#5A7543',
         },
         gold: {
-          DEFAULT: '#C89B3C',
-          light: '#DFB456',
-          dark: '#A67E28',
+          DEFAULT: '#785507',
+          light: '#916709',
+          dark: '#614404',
         },
         'dark-text': '#2B211B',
-        'muted-text': '#756A60',
+        'muted-text': '#5A5046',
       },
       fontFamily: {
         serif: ['"Tenor Sans"', 'Georgia', 'serif'],

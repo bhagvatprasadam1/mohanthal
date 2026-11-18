@@ -29,22 +29,21 @@ export const FinalCTA: React.FC = () => {
           <a
             href={`tel:${siteConfig.phone}`}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-deep-brown hover:bg-deep-brown-dark text-cream border border-gold/40 text-base font-medium transition-colors active:scale-95"
-            aria-label="Call our sweet master"
           >
             <Phone className="w-4 h-4 text-gold" />
             <span>Call: {siteConfig.displayPhone}</span>
           </a>
         </div>
 
-        <div className="pt-6 flex items-center justify-center gap-6 text-xs text-white/80">
-          <Link to="/contact" className="hover:underline flex items-center gap-1.5">
-            <Mail className="w-3.5 h-3.5" />
+        <div className="pt-6 flex items-center justify-center gap-6 text-xs text-white">
+          <Link to="/contact" className="hover:underline flex items-center gap-1.5 text-white font-medium">
+            <Mail className="w-3.5 h-3.5 text-cream" />
             <span>Send Written Inquiry</span>
           </Link>
-          <span>•</span>
-          <span>Pan India Fresh Dispatch</span>
-          <span>•</span>
-          <span>Small Batch Made to Order</span>
+          <span className="text-white/60">•</span>
+          <span className="text-white font-medium">Pan India Fresh Dispatch</span>
+          <span className="text-white/60">•</span>
+          <span className="text-white font-medium">Small Batch Made to Order</span>
         </div>
       </div>
     </section>

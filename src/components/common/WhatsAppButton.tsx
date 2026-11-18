@@ -30,17 +30,17 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   }[size];
 
   const variantClasses = {
-    solid: 'bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold',
-    white: 'bg-white hover:bg-[#FAF8F5] text-[#0D6539] hover:text-[#084526] font-bold border border-[#25D366]/40',
-    outline: 'border-2 border-[#25D366] text-[#0D6539] hover:bg-[#25D366] hover:text-white font-semibold',
-    pill: 'bg-[#25D366]/10 text-[#0D6539] hover:bg-[#25D366] hover:text-white border border-[#25D366]/30 font-medium',
+    solid: 'bg-[#15803d] hover:bg-[#166534] text-white font-semibold shadow-sm',
+    white: 'bg-white hover:bg-[#FAF8F5] text-[#15803d] hover:text-[#166534] font-bold border border-[#15803d]/40',
+    outline: 'border-2 border-[#15803d] text-[#15803d] hover:bg-[#15803d] hover:text-white font-semibold',
+    pill: 'bg-[#15803d]/10 text-[#15803d] hover:bg-[#15803d] hover:text-white border border-[#15803d]/30 font-medium',
   }[variant];
 
   const iconClasses = {
     solid: 'text-white',
-    white: 'text-[#25D366]',
-    outline: 'text-[#25D366] group-hover:text-white',
-    pill: 'text-[#25D366] group-hover:text-white',
+    white: 'text-[#15803d]',
+    outline: 'text-[#15803d] group-hover:text-white',
+    pill: 'text-[#15803d] group-hover:text-white',
   }[variant];
 
   const iconSize = {
@@ -55,7 +55,6 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center justify-center rounded-full transition-all duration-200 active:scale-[0.98] select-none ${sizeClasses} ${variantClasses} ${className}`}
-      aria-label="Contact us on WhatsApp"
     >
       <WhatsAppIcon className={`${iconSize} flex-shrink-0 ${iconClasses} transition-colors`} />
       <span>{children}</span>

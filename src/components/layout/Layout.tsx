@@ -15,8 +15,11 @@ export const Layout: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-cream text-dark-text antialiased selection:bg-primary/20 selection:text-deep-brown">
-      <AnnouncementBar />
-      <Header />
+      {/* Top Fixed Header Container with Line 1 & Line 2 Announcement Bar */}
+      <div className="sticky top-0 z-40 w-full">
+        <AnnouncementBar />
+        <Header />
+      </div>
       <main className="flex-grow">
         <Outlet />
       </main>

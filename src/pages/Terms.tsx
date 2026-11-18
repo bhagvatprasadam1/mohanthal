@@ -2,6 +2,7 @@ import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { seoData } from '../data/seo';
 import { getBreadcrumbSchema } from '../lib/seo';
+import { siteConfig } from '../data/siteConfig';
 import { Link } from 'react-router-dom';
 
 export const Terms: React.FC = () => {
@@ -71,7 +72,7 @@ export const Terms: React.FC = () => {
           <section className="space-y-2 pt-2">
             <h2 className="font-serif font-bold text-xl text-deep-brown">4. Inquiries & Disputes</h2>
             <p>
-              For any clarification or custom corporate terms, please reach our team at <em>hello@mohanthal.in</em> or via our official WhatsApp line.
+              For any clarification or custom corporate terms, please reach our team at <em>{siteConfig.email}</em> or via our official WhatsApp line.
             </p>
           </section>
         </div>

@@ -41,23 +41,25 @@ export const About: React.FC = () => {
 
         {/* Master Our Story Hero Banner */}
         <div className="mb-8 sm:mb-10 lg:mb-12 rounded-2xl sm:rounded-3xl overflow-hidden border border-light-beige bg-[#FAF4E8]">
-          <img
-            src="/images/our-story-banner.webp"
-            alt="Our Story • A Legacy of Tradition, Crafted with Love"
-            width="1024"
-            height="409"
-            className="w-full h-auto block select-none"
-            loading="eager"
-            fetchPriority="high"
-          />
+          <picture>
+            <source srcSet="/images/our-story-banner.avif" type="image/avif" />
+            <source srcSet="/images/our-story-banner.webp" type="image/webp" />
+            <img
+              src="/images/our-story-banner.webp"
+              alt="Our Story • A Legacy of Tradition, Crafted with Love"
+              width="1024"
+              height="409"
+              className="w-full h-auto block select-none"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
         </div>
 
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
           <span className="font-jost text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-primary flex items-center justify-center gap-2 mb-3">
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
             ANCESTRAL CRAFTSMANSHIP
-            <span className="inline-block w-4 h-0.5 bg-gold/70"></span>
           </span>
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-deep-brown font-normal tracking-tight leading-tight">
             Preserving a Taste of Tradition
@@ -95,14 +97,19 @@ export const About: React.FC = () => {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-2xl overflow-hidden border-2 border-gold/40">
-                <img
-                  src="/images/process-craft.jpg"
-                  alt="Ancestral Gujarati Mohanthal slow roasting craftsmanship in brass vessel"
-                  className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width="600"
-                  height="450"
-                />
+                <picture>
+                  <source srcSet="/images/process-craft.avif" type="image/avif" />
+                  <source srcSet="/images/process-craft.webp" type="image/webp" />
+                  <img
+                    src="/images/process-craft.jpg"
+                    alt="Ancestral Gujarati Mohanthal slow roasting craftsmanship in brass vessel"
+                    className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="450"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -171,20 +178,34 @@ export const About: React.FC = () => {
         {/* Visual Heritage Grid: 2 columns on all devices */}
         <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/40 bg-white">
-            <img
-              src="/images/festive-banner.jpg"
-              alt="Festive Gujarati Mohanthal gift box with Diwali lamps and marigolds"
-              className="w-full h-44 sm:h-72 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/images/festive-banner.avif" type="image/avif" />
+              <source srcSet="/images/festive-banner.webp" type="image/webp" />
+              <img
+                src="/images/festive-banner.jpg"
+                alt="Festive Gujarati Mohanthal gift box with Diwali lamps and marigolds"
+                className="w-full h-44 sm:h-72 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="688"
+                height="384"
+              />
+            </picture>
           </div>
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/40 bg-white">
-            <img
-              src="/images/hero-mohanthal-3d.jpg"
-              alt="Artisanal 3D Mohanthal sweet cubes with pure ghee and dry fruits"
-              className="w-full h-44 sm:h-72 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
+            <picture>
+              <source srcSet="/images/hero-mohanthal-3d.avif" type="image/avif" />
+              <source srcSet="/images/hero-mohanthal-3d.webp" type="image/webp" />
+              <img
+                src="/images/hero-mohanthal-3d.jpg"
+                alt="Artisanal 3D Mohanthal sweet cubes with pure ghee and dry fruits"
+                className="w-full h-44 sm:h-72 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="688"
+                height="384"
+              />
+            </picture>
           </div>
         </div>
 

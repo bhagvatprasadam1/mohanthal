@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { seoData } from '../data/seo';
-import { getBreadcrumbSchema } from '../lib/seo';
+import { getBreadcrumbSchema, getProductSchema } from '../lib/seo';
 import { giftingOccasions } from '../data/gifting';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { WhatsAppButton } from '../components/common/WhatsAppButton';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 export const Gifting: React.FC = () => {
   const schemas = [
+    getProductSchema(),
     getBreadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Gifting', path: '/gifting' },
@@ -83,11 +84,19 @@ export const Gifting: React.FC = () => {
             </div>
             <div className="lg:col-span-6">
               <div className="rounded-2xl overflow-hidden border border-gold/40">
-                <img
-                  src="/images/gifting-mohanthal.jpg"
-                  alt="Premium Mohanthal gift box with diya and marigolds"
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                />
+                <picture>
+                  <source srcSet="/images/gifting-mohanthal.avif" type="image/avif" />
+                  <source srcSet="/images/gifting-mohanthal.webp" type="image/webp" />
+                  <img
+                    src="/images/gifting-mohanthal.jpg"
+                    alt="Premium Mohanthal gift box with diya and marigolds"
+                    className="w-full h-auto object-cover aspect-[4/3]"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="450"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -127,7 +136,7 @@ export const Gifting: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-light-beige text-xs text-dark-text/90 font-medium">
+                <div className="pt-2 text-xs text-dark-text/90 font-medium">
                   <strong>Recommended Box:</strong> {occ.boxSize}
                 </div>
               </div>

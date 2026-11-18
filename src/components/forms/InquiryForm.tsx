@@ -92,7 +92,7 @@ export const InquiryForm: React.FC = () => {
       className="bg-white rounded-3xl p-6 sm:p-10 border border-light-beige space-y-6"
       noValidate
     >
-      <div className="border-b border-light-beige pb-3 mb-5">
+      <div className="pb-1 mb-5">
         <h3 className="font-serif font-normal text-xl sm:text-2xl text-deep-brown">
           Order & Gifting Inquiry
         </h3>

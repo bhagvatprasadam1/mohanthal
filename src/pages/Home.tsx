@@ -3,6 +3,7 @@ import { SEOHead } from "../components/seo/SEOHead";
 import { seoData } from "../data/seo";
 import {
   getOrganizationSchema,
+  getWebSiteSchema,
   getProductSchema,
   getFAQPageSchema,
 } from "../lib/seo";
@@ -24,6 +25,7 @@ import { FinalCTA } from "../components/home/FinalCTA";
 export const Home: React.FC = () => {
   const schemas = [
     getOrganizationSchema(),
+    getWebSiteSchema(),
     getProductSchema(),
     getFAQPageSchema(),
   ];
@@ -31,11 +33,11 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Mohanthal | मोहनथाल | Pure Gujarati Sweet | Festival & Diwali Sweet"
-        description="Authentic Gujarati Mohanthal handcrafted with pure premium ghee, stone-ground besan, and steeped saffron by Bhagvat Prasadam. Freshly prepared, traditional grainy texture delivered across India."
-        keywords="Mohanthal, मोहनथाल, pure Gujarati sweet, traditional Gujarati sweet, festival sweets, Diwali celebrations, puja offerings, corporate gifting, Bhagvat Prasadam Mohanthal"
+        title={seoData.home.title}
+        description={seoData.home.description}
+        keywords={seoData.home.keywords}
         canonicalPath={seoData.home.canonicalPath}
-        ogImage="/images/festive-banner.jpg"
+        ogImage={seoData.home.ogImage}
         schema={schemas}
       />
 

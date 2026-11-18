@@ -8,6 +8,7 @@ export interface SEOHeadProps {
   canonicalPath?: string;
   ogImage?: string;
   schema?: object | object[];
+  noindex?: boolean;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -17,6 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   canonicalPath = '/',
   ogImage = '/images/hero-traditional-box.webp',
   schema,
+  noindex = false,
 }) => {
   useEffect(() => {
     // Set title
@@ -45,6 +47,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       setMeta('keywords', keywords);
     }
 
+    // Crawling & Indexing settings
+    setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setMeta('googlebot', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+
     const fullCanonicalUrl = `${siteConfig.siteUrl}${canonicalPath === '/' ? '' : canonicalPath}`;
     const fullOgImageUrl = ogImage.startsWith('http')
       ? ogImage
@@ -66,6 +72,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     setMeta('og:image', fullOgImageUrl, true);
     setMeta('og:type', 'website', true);
     setMeta('og:site_name', siteConfig.brandName, true);
+    setMeta('og:locale', 'en_IN', true);
 
     // Twitter Card
     setMeta('twitter:card', 'summary_large_image');
@@ -85,7 +92,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       }
       script.textContent = JSON.stringify(schema);
     }
-  }, [title, description, keywords, canonicalPath, ogImage, schema]);
+  }, [title, description, keywords, canonicalPath, ogImage, schema, noindex]);
 
   return null;
 };

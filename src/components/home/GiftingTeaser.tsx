@@ -27,14 +27,19 @@ export const GiftingTeaser: React.FC = () => {
           {/* Visual Showcase */}
           <div className="lg:col-span-6 relative">
             <div className="rounded-3xl overflow-hidden border-2 border-gold/40 bg-white">
-              <img
-                src="/images/gifting-mohanthal.jpg"
-                alt="Luxury premium festive gift box filled with authentic Gujarati Mohanthal sweets adorned with diya and marigolds"
-                className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                width="600"
-                height="450"
-              />
+              <picture>
+                <source srcSet="/images/gifting-mohanthal.avif" type="image/avif" />
+                <source srcSet="/images/gifting-mohanthal.webp" type="image/webp" />
+                <img
+                  src="/images/gifting-mohanthal.jpg"
+                  alt="Luxury premium festive gift box filled with authentic Gujarati Mohanthal sweets adorned with diya and marigolds"
+                  className="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="450"
+                />
+              </picture>
             </div>
             <div className="mt-3 text-center text-xs text-muted-text italic">
               Premium rigid drawer box with food-grade airtight seal

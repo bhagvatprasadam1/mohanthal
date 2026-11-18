@@ -89,6 +89,9 @@ export const Gallery: React.FC = () => {
                   alt={item.altText}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="400"
                 />
               </div>
               <div className="absolute inset-0 bg-deep-brown/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
@@ -134,7 +137,7 @@ export const Gallery: React.FC = () => {
                 />
               </div>
 
-              <div className="p-6 bg-cream border-t border-light-beige">
+              <div className="p-6 bg-cream">
                 <span className="text-xs font-bold uppercase tracking-widest text-gold block mb-1">
                   {selectedImage.category}
                 </span>

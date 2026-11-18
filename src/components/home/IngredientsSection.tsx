@@ -37,14 +37,19 @@ export const IngredientsSection: React.FC = () => {
               </div>
             </div>
             <div className="lg:col-span-7 h-full">
-              <img
-                src="/images/ingredients-mohanthal.jpg"
-                alt="Flat lay of Mohanthal ingredients: besan, pure golden premium ghee, saffron, cardamom, almonds, and pistachios"
-                className="w-full h-full object-cover max-h-[380px] lg:max-h-none"
-                loading="lazy"
-                width="700"
-                height="450"
-              />
+              <picture>
+                <source srcSet="/images/ingredients-mohanthal.avif" type="image/avif" />
+                <source srcSet="/images/ingredients-mohanthal.webp" type="image/webp" />
+                <img
+                  src="/images/ingredients-mohanthal.jpg"
+                  alt="Flat lay of Mohanthal ingredients: besan, pure golden premium ghee, saffron, cardamom, almonds, and pistachios"
+                  className="w-full h-full object-cover max-h-[380px] lg:max-h-none"
+                  loading="lazy"
+                  decoding="async"
+                  width="700"
+                  height="450"
+                />
+              </picture>
             </div>
           </div>
         </div>

@@ -27,9 +27,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     <div className={`flex flex-col ${alignClass} max-w-3xl mb-6 sm:mb-8 lg:mb-10 ${className}`}>
       {eyebrow && (
         <span className="font-jost text-primary font-bold text-[11px] sm:text-xs uppercase tracking-[0.22em] mb-1.5 sm:mb-2 flex items-center gap-2">
-          <span className="inline-block w-3.5 sm:w-4 h-0.5 bg-gold/70"></span>
           {eyebrow}
-          <span className="inline-block w-3.5 sm:w-4 h-0.5 bg-gold/70"></span>
         </span>
       )}
       {isMainH1 ? (
@@ -46,7 +44,6 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           {subtitle}
         </p>
       )}
-      <div className="w-12 h-0.5 bg-primary mt-2.5 sm:mt-3" />
     </div>
   );
 };

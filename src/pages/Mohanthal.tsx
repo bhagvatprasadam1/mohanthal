@@ -51,11 +51,11 @@ export const Mohanthal: React.FC = () => {
   return (
     <div className="bg-cream py-8 sm:py-10 lg:py-12">
       <SEOHead
-        title="Mohanthal | मोहनथाल | Pure Gujarati Sweet | Festival & Diwali Sweet"
-        description="Authentic Mohanthal by Bhagvat Prasadam. Traditional Gujarati sweet made with pure premium ghee, premium besan, and rich dry fruits. Order 250gm, 500gm, or 1kg online."
-        keywords="Mohanthal, मोहनथाल, pure Gujarati sweet, traditional Gujarati sweet, festival sweets, Diwali sweet, Bhagvat Prasadam Mohanthal, pure premium ghee sweet"
+        title={seoData.mohanthal.title}
+        description={seoData.mohanthal.description}
+        keywords={seoData.mohanthal.keywords}
         canonicalPath={seoData.mohanthal.canonicalPath}
-        ogImage={mohanthalProduct.imageUrl}
+        ogImage={seoData.mohanthal.ogImage}
         schema={schemas}
       />
 
@@ -92,11 +92,19 @@ export const Mohanthal: React.FC = () => {
                     key={idx}
                     type="button"
                     onClick={() => setActiveImage(img)}
+                    aria-label={`View Mohanthal photo angle ${idx + 1}`}
                     className={`rounded-lg overflow-hidden border-2 transition-all aspect-square ${
                       activeImage === img ? 'border-primary ring-1 ring-primary' : 'border-light-beige opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt={`Mohanthal gallery thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img
+                      src={img}
+                      alt={`Mohanthal gallery thumbnail ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                      width="90"
+                      height="90"
+                      loading="lazy"
+                    />
                   </button>
                 ))}
               </div>
@@ -106,7 +114,7 @@ export const Mohanthal: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="text-xs font-bold tracking-widest uppercase text-gold bg-deep-brown px-2.5 py-1 rounded">
+                  <span className="text-xs font-bold tracking-widest uppercase text-amber-300 bg-deep-brown px-2.5 py-1 rounded">
                     {mohanthalProduct.hindiTitle} • {mohanthalProduct.regionalName}
                   </span>
                   <span className="text-xs text-primary font-semibold flex items-center gap-1">
@@ -153,7 +161,7 @@ export const Mohanthal: React.FC = () => {
                           {option.weight}
                         </span>
                         {option.popular && (
-                          <span className="text-[9px] bg-gold text-deep-brown px-1.5 py-0.5 rounded font-bold uppercase">
+                          <span className="text-[9px] bg-amber-300 text-deep-brown px-1.5 py-0.5 rounded font-extrabold uppercase">
                             Most Loved
                           </span>
                         )}
@@ -176,10 +184,22 @@ export const Mohanthal: React.FC = () => {
                   <span>Ideal for: {activeWeightObj.idealFor}</span>
                   <span>Serves: {activeWeightObj.serving}</span>
                 </div>
+
+                {/* Free Shipping Offer Badges */}
+                <div className="mt-3.5 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/40 text-[11px] sm:text-xs font-semibold text-deep-brown shadow-2xs">
+                    <span className="text-muted-green font-bold text-xs">✓</span>
+                    <span>Free Shipping above ₹999</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream border border-gold/40 text-[11px] sm:text-xs font-semibold text-deep-brown shadow-2xs">
+                    <span className="text-muted-green font-bold text-xs">✓</span>
+                    <span>First Order: Free Shipping above ₹599</span>
+                  </span>
+                </div>
               </div>
 
               {/* Conversion Buttons with Product Link */}
-              <div className="space-y-3 pt-4 border-t border-light-beige">
+              <div className="space-y-3 pt-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <WhatsAppButton
                     context="product_weight"
@@ -317,7 +337,7 @@ export const Mohanthal: React.FC = () => {
         {/* Official Store Outbound Action Bar */}
         <div className="bg-deep-brown text-cream rounded-3xl p-8 sm:p-10 border border-gold/40 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-gold block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-300 block mb-1">
               OFFICIAL STORE AVAILABILITY
             </span>
             <h3 className="font-serif font-bold text-2xl text-cream">
@@ -331,10 +351,10 @@ export const Mohanthal: React.FC = () => {
             href={mohanthalProduct.productUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 rounded-full bg-gold hover:bg-gold-light text-deep-brown font-bold text-sm flex items-center gap-2 flex-shrink-0"
+            className="px-6 py-3.5 rounded-full bg-amber-300 hover:bg-amber-400 text-deep-brown font-bold text-sm flex items-center gap-2 flex-shrink-0"
           >
             <span>Visit Bhagvat Prasadam Store</span>
-            <ExternalLink className="w-4 h-4" />
+            <ExternalLink className="w-4 h-4 text-deep-brown" />
           </a>
         </div>
 

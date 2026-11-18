@@ -33,10 +33,10 @@ export const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        className={`w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-cream/95 backdrop-blur-md py-2 border-b border-light-beige'
-            : 'bg-cream py-2.5 sm:py-3 border-b border-light-beige/60'
+            ? 'bg-cream/95 backdrop-blur-md py-1.5 shadow-xs'
+            : 'bg-cream py-2 sm:py-2.5'
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-between min-h-[58px] sm:min-h-[64px] lg:min-h-[70px]">
@@ -51,10 +51,11 @@ export const Header: React.FC = () => {
               <img
                 src="/images/logo.webp"
                 alt={`${siteConfig.brandName} Traditional Sweets`}
-                width="988"
-                height="488"
+                width="256"
+                height="80"
                 className="w-36 sm:w-44 md:w-48 lg:w-52 xl:w-64 h-auto max-h-14 sm:max-h-16 lg:max-h-20 object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="eager"
+                fetchPriority="high"
               />
             </Link>
           </div>

@@ -105,7 +105,7 @@ export const ProductVideoSection: React.FC = () => {
               </div>
 
               {/* Trust Features */}
-              <div className="space-y-2.5 text-xs sm:text-sm text-dark-text border-t border-b border-light-beige py-4">
+              <div className="space-y-2.5 text-xs sm:text-sm text-dark-text py-2">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-muted-green flex-shrink-0" />
                   <span>Pure Premium Ghee & Gram Flour (Besan)</span>

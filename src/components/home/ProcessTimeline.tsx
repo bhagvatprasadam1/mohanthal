@@ -54,7 +54,7 @@ export const ProcessTimeline: React.FC = () => {
                         className="bg-white/95 rounded-2xl p-5 sm:p-6 border border-light-beige hover:border-primary transition-colors relative group"
                       >
                         {/* Header: Step pill & duration */}
-                        <div className="flex items-center justify-between pb-3 mb-3 border-b border-light-beige/70">
+                        <div className="flex items-center justify-between pb-2.5 mb-2.5">
                           <span className="font-jost text-xs uppercase tracking-wider font-bold text-primary">
                             Stage {step.step}
                           </span>
@@ -78,7 +78,7 @@ export const ProcessTimeline: React.FC = () => {
                         </p>
 
                         {/* Craft Secret Highlight */}
-                        <div className="pt-2.5 border-t border-light-beige/60 text-[11px] sm:text-xs text-muted-green font-medium flex items-start gap-1.5">
+                        <div className="pt-2 text-[11px] sm:text-xs text-muted-green font-medium flex items-start gap-1.5">
                           <span className="flex-shrink-0">💡</span>
                           <span className="text-dark-text/80">{step.craftSecret}</span>
                         </div>

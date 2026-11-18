@@ -61,7 +61,7 @@ export const CustomerReviews: React.FC = () => {
               </div>
 
               {/* Author & City */}
-              <div className="pt-4 border-t border-light-beige flex items-center justify-between">
+              <div className="pt-3 flex items-center justify-between">
                 <div>
                   <h4 className="font-serif font-bold text-deep-brown text-base">
                     {item.name}

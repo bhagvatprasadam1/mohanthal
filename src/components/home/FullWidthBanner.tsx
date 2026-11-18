@@ -21,6 +21,7 @@ export const FullWidthBanner: React.FC = () => {
               height="408"
               className="w-full h-auto block select-none transition-transform duration-500"
               loading="lazy"
+              decoding="async"
             />
           </Link>
         </div>

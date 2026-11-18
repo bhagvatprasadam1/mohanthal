@@ -2,6 +2,7 @@ import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { seoData } from '../data/seo';
 import { getBreadcrumbSchema } from '../lib/seo';
+import { siteConfig } from '../data/siteConfig';
 import { Link } from 'react-router-dom';
 
 export const PrivacyPolicy: React.FC = () => {
@@ -71,7 +72,7 @@ export const PrivacyPolicy: React.FC = () => {
           <section className="space-y-2 pt-2">
             <h2 className="font-serif font-bold text-xl text-deep-brown">4. Contacting Us</h2>
             <p>
-              For any questions regarding your personal details or communications, you may reach out to us at <em>hello@mohanthal.in</em>.
+              For any questions regarding your personal details or communications, you may reach out to us at <em>{siteConfig.email}</em>.
             </p>
           </section>
         </div>

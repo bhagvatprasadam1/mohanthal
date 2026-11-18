@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { siteConfig } from "../../data/siteConfig";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { WhatsAppIcon } from "../common/WhatsAppIcon";
+import { AppDownloadBadges } from "../common/AppDownloadBadges";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -11,19 +12,20 @@ export const Footer: React.FC = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <footer className="bg-cream text-dark-text pt-6 sm:pt-8 lg:pt-9 pb-6 border-t border-light-beige">
+    <footer className="bg-cream text-dark-text pt-6 sm:pt-8 lg:pt-9 pb-6">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid: Clean collapsible sections on mobile, 12-col on desktop */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 pb-6 sm:pb-8">
           {/* Brand Column */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-4 space-y-3 sm:space-y-4">
-            <Link to="/" className="inline-block group">
+            <Link to="/" className="inline-block group" aria-label={`${siteConfig.brandName} Traditional Sweets`}>
               <img
                 src="/images/logo.webp"
                 alt={`${siteConfig.brandName} Traditional Sweets`}
-                width="988"
-                height="488"
+                width="220"
+                height="68"
                 className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-opacity group-hover:opacity-90"
+                loading="lazy"
               />
             </Link>
             <p className="text-muted-text text-xs sm:text-sm leading-relaxed max-w-sm">
@@ -34,7 +36,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links Column (Collapsible Dropdown on Mobile, Open by Default on Desktop) */}
-          <div className="col-span-2 sm:col-span-2 lg:col-span-3 border-b border-light-beige/70 pb-3 lg:border-none lg:pb-0">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-3 pb-3 lg:pb-0">
             <button
               type="button"
               onClick={() => setIsQuickLinksOpen((prev) => !prev)}
@@ -104,7 +106,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Policies Column (Collapsible Dropdown on Mobile, Open by Default on Desktop) */}
-          <div className="col-span-2 sm:col-span-2 lg:col-span-2 border-b border-light-beige/70 pb-3 lg:border-none lg:pb-0">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-2 pb-3 lg:pb-0">
             <button
               type="button"
               onClick={() => setIsPoliciesOpen((prev) => !prev)}
@@ -169,7 +171,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info Column (Collapsible Dropdown on Mobile, Open by Default on Desktop) */}
-          <div className="col-span-2 sm:col-span-2 lg:col-span-3 border-b border-light-beige/70 pb-3 lg:border-none lg:pb-0 pt-1 sm:pt-2 lg:pt-0">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-3 pb-3 lg:pb-0 pt-1 sm:pt-2 lg:pt-0">
             <button
               type="button"
               onClick={() => setIsContactOpen((prev) => !prev)}
@@ -282,12 +284,26 @@ export const Footer: React.FC = () => {
           height="275"
           className="w-full h-auto block select-none pointer-events-none"
           loading="lazy"
+          decoding="async"
         />
       </div>
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Mobile App Promotion Bar (Footer - Zero extra whitespace before copyright) */}
+        <div className="pt-2 pb-2 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 text-center text-xs text-muted-text">
+          <span className="hidden sm:inline font-medium">
+            Install <strong className="text-deep-brown font-bold">{siteConfig.brandName}</strong> App &amp; Get{' '}
+            <span className="text-primary font-bold">{siteConfig.offers.appDiscount}</span> on App! Available on:
+          </span>
+          <span className="inline sm:hidden font-medium text-[11px]">
+            Install App &amp; Get{' '}
+            <span className="text-primary font-bold">{siteConfig.offers.appDiscountShort}</span>:
+          </span>
+          <AppDownloadBadges size="xs" />
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-4 border-t border-light-beige/70 flex flex-col sm:flex-row items-center justify-center text-center text-xs text-muted-text gap-1.5 sm:gap-2">
+        <div className="pt-2 pb-4 flex flex-col sm:flex-row items-center justify-center text-center text-xs text-muted-text gap-1.5 sm:gap-2">
           <p>
             © {currentYear} {siteConfig.brandName}. All rights reserved. Crafted with Gujarati tradition.
           </p>

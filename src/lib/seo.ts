@@ -7,9 +7,21 @@ export function getOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: siteConfig.brandName,
+    alternateName: ['Bhagvat Prasadam Mohanthal', 'Mohanthal Sweets'],
     url: siteConfig.siteUrl,
-    logo: `${siteConfig.siteUrl}/favicon.svg`,
+    logo: `${siteConfig.siteUrl}/images/logo.webp`,
+    image: `${siteConfig.siteUrl}/images/hero-traditional-box.webp`,
     description: siteConfig.subTagline,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.postalCode,
+      addressCountry: 'IN',
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: siteConfig.phone,
@@ -25,18 +37,42 @@ export function getOrganizationSchema() {
   };
 }
 
+export function getWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.brandName,
+    alternateName: 'Mohanthal - Pure Gujarati Sweets',
+    url: siteConfig.siteUrl,
+    description: siteConfig.subTagline,
+    inLanguage: 'en-IN',
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.brandName,
+      url: siteConfig.siteUrl,
+      logo: `${siteConfig.siteUrl}/images/logo.webp`,
+    },
+  };
+}
+
 export function getProductSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Mohanthal | मोहनथाल | Traditional Gujarati Sweet',
-    image: `${siteConfig.siteUrl}${mohanthalProduct.imageUrl}`,
+    image: [
+      `${siteConfig.siteUrl}${mohanthalProduct.imageUrl}`,
+      `${siteConfig.siteUrl}/images/bhagvat/mohan_thal_plate.webp`,
+      `${siteConfig.siteUrl}/images/hero-traditional-box.webp`,
+    ],
     description: mohanthalProduct.description,
     brand: {
       '@type': 'Brand',
       name: mohanthalProduct.vendor,
     },
     category: 'Food & Beverage > Sweets & Desserts > Indian Sweets',
+    sku: 'MOHAN-THAL-TRADITIONAL',
+    mpn: 'BP-MOHAN-001',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'INR',
@@ -45,6 +81,7 @@ export function getProductSchema() {
       offerCount: '3',
       availability: 'https://schema.org/InStock',
       url: mohanthalProduct.productUrl,
+      priceValidUntil: '2027-12-31',
       seller: {
         '@type': 'Organization',
         name: mohanthalProduct.vendor,

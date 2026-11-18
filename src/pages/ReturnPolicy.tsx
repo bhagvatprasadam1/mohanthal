@@ -64,7 +64,7 @@ export const ReturnPolicy: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-6 text-sm text-dark-text/90 leading-relaxed border-t border-light-beige pt-6">
+          <div className="space-y-6 text-sm text-dark-text/90 leading-relaxed pt-2">
             <section className="space-y-2">
               <h2 className="font-serif font-bold text-xl text-deep-brown">1. Perishable Food Product Nature</h2>
               <p>
